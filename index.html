@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#765b4d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Her Closet</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="app">
+  <header class="topbar">
+    <div>
+      <div class="brand">Her Closet ♡</div>
+      <div class="tagline">YOUR STYLE, YOUR RULES</div>
+    </div>
+    <button class="round" id="profileBtn" aria-label="Mon profil">♡</button>
+  </header>
+
+  <section class="welcome">
+    <div class="welcome-card">
+      <div class="hello">Hello ♡</div>
+      <h1>What are we<br>wearing today?</h1>
+      <button class="pill" id="surpriseTop">✨ Surprise-moi</button>
+    </div>
+    <div class="weather">
+      <div class="small">Aujourd'hui</div>
+      <strong>☀️ 23°</strong>
+      <span>Parfait pour sortir</span>
+    </div>
+  </section>
+
+  <section class="builder">
+    <div class="builder-head">
+      <h2>Ma tenue ♡</h2>
+      <button class="text-btn" id="clearLook">Réinitialiser</button>
+    </div>
+
+    <div class="stage">
+      <div class="avatar-wrap">
+        <img id="avatar" src="assets/avatar.jpg" alt="Avatar personnalisé">
+        <div class="avatar-overlay" id="overlayTop"></div>
+        <div class="avatar-overlay" id="overlayBottom"></div>
+        <div class="avatar-label" id="lookLabel">Look du jour</div>
+      </div>
+
+      <div class="controls">
+        <div class="tabs" id="tabs"></div>
+        <div class="items" id="items"></div>
+        <div class="actions">
+          <button class="primary" id="saveLook">♡ Enregistrer</button>
+          <button class="secondary" id="shareLook">Partager</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="dressing">
+    <div class="section-head">
+      <h2>Mon dressing</h2>
+      <span id="itemCount">0 pièces</span>
+    </div>
+    <div class="category-row" id="categoryRow"></div>
+    <button class="add-clothes" id="addClothes">📸 Ajouter un vêtement</button>
+    <input id="photoInput" type="file" accept="image/*" capture="environment" hidden>
+  </section>
+
+  <section class="section" id="looks">
+    <div class="section-head">
+      <h2>Mes looks ♡</h2>
+      <span id="lookCount">0 sauvegardé</span>
+    </div>
+    <div class="saved-grid" id="savedGrid"></div>
+  </section>
+
+  <nav class="nav">
+    <button class="nav-active">⌂<span>Accueil</span></button>
+    <button id="navDressing">♧<span>Dressing</span></button>
+    <button class="nav-plus" id="navAdd">＋</button>
+    <button id="navLooks">♡<span>Looks</span></button>
+    <button id="navProfile">◯<span>Profil</span></button>
+  </nav>
+
+  <div class="modal" id="addModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="closeModal">×</button>
+      <h2>Ajouter un vêtement</h2>
+      <p>Prends une photo de ta pièce ou choisis-la dans ta galerie.</p>
+      <div class="photo-preview" id="photoPreview">📷</div>
+      <label>Nom
+        <input id="clothName" placeholder="Ex. blouse crème">
+      </label>
+      <label>Catégorie
+        <select id="clothCategory">
+          <option value="Tops">Tops</option>
+          <option value="Bas">Bas</option>
+          <option value="Vestes">Vestes</option>
+          <option value="Chaussures">Chaussures</option>
+          <option value="Sacs">Sacs</option>
+          <option value="Bijoux">Bijoux</option>
+        </select>
+      </label>
+      <button class="primary full" id="takePhoto">📸 Prendre / choisir une photo</button>
+      <button class="secondary full" id="confirmAdd">Ajouter au dressing</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
